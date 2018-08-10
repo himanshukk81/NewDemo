@@ -1,0 +1,27 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+          <ion-label color="primary">Enter Mobile</ion-label>
+          <ion-input placeholder="Enter Mobile Number" [(ngModel)]="user.mobile" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item text-center>
+          <Button ion-button color="secondary" (click)="login()">Login</Button>
+      </ion-item>
+  </ion-list>  
+</ion-content>

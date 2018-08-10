@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>TDS Calculation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <p text-center *ngIf="weatherData">Current Tempurature  <b>{{weatherData.temp_c}}</b></p>
+ <p *ngIf="weatherData" text-center><img [src]="weatherData.condition.icon" width="50px" height="50px"></p>
+
+
+ <ion-list>
+    <ion-item>
+      <ion-label color="primary">Name</ion-label>
+      <ion-input placeholder="Enter Name" [(ngModel)]="user.name" type="text"></ion-input>
+    </ion-item>
+   
+    
+      <ion-list radio-group [(ngModel)]="user.gender">
+            <ion-item>
+              <ion-label>Male</ion-label>
+              <ion-radio value="M"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Female</ion-label>
+              <ion-radio value="F"></ion-radio>
+            </ion-item>
+      </ion-list>    
+    
+
+    <ion-item>
+        <ion-label color="primary">Annual Income</ion-label>
+        <ion-input placeholder="Enter Income" [(ngModel)]="user.annualIncome" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary">Age</ion-label>
+        <ion-input placeholder="Enter Age" [(ngModel)]="user.age" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item text-center>
+        <Button ion-button color="primary" (click)="findTDS()">Submit</Button>
+    </ion-item>
+  
+    <br/><br/><br/>
+
+    <ion-item text-center>
+
+       TDS Amount <b> {{tdsAmount.toFixed(2)}} </b>
+    </ion-item>
+ </ion-list>   
+</ion-content>
